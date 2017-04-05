@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Arrow Functions</title>
+</head>
+<body>
+
+<ul>
+  <li data-time="5:17">NodeJs Video</li>
+  <li data-time="8:22">NodeJs Video</li>
+  <li data-time="3:34">AngularJs Video</li>
+  <li data-time="5:23">NodeJs Video</li>
+  <li data-time="7:12">NodeJs Video</li>
+  <li data-time="7:24">AngularJs Video</li>
+  <li data-time="6:46">NodeJs Video</li>
+  <li data-time="4:45">NodeJs Video</li>
+  <li data-time="4:40">NodeJs Video</li>
+  <li data-time="7:58">AngularJs Video</li>
+  <li data-time="11:51">NodeJs Video</li>
+  <li data-time="9:13">NodeJs Video</li>
+  <li data-time="5:50">NodeJs Video</li>
+  <li data-time="5:52">AngularJs Video</li>
+  <li data-time="5:49">NodeJs Video</li>
+  <li data-time="8:57">NodeJs Video</li>
+  <li data-time="11:29">NodeJs Video</li>
+  <li data-time="3:07">NodeJs Video</li>
+  <li data-time="5:59">AngularJs Video</li>
+  <li data-time="3:31">NodeJs Video</li>
+</ul>
+
+<script>
+
+  // Select all the list items on the page and convert to array
+
+  // Filter for only the elements that contain the word 'NodeJs'
+
+  // map down to a list of time strings
+
+  // map to an array of seconds
+
+  // reduce to get total
+
+  // This can also be done in a single .reduce(), but we're practicing arrow functions here, so chain them!
+
+  var all = Array.from(document.querySelectorAll('[data-time]'));
+  console.log(all);
+  let nodejs = all.filter(e => e.innerHTML.indexOf("NodeJs") != -1)
+                  .map(x => x.getAttribute("data-time"))
+                  .map(x => {
+                    const y = x.split(":");
+                    let seconds = 0;
+                    if(y.length===2)
+                      seconds =Number(y[0])*60 + Number(y[1]);
+                    else if(y.length === 3)
+                      seconds = Number(y[0])*60*60 + Number(y[1])*60 + Number(y[2]);
+                    return seconds;
+                  })
+                  .reduce((t,x)=>t+x);
+  console.log(nodejs);
+
+</script>
+</body>
+</html>

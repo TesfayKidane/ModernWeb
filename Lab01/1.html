@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BMI Calculator</title>
+</head>
+<body>
+<h3>BMI Claculator</h3>
+<label><input type="radio" name="unit" id="metric" value="metric" /> Metric </label><br />
+<label><input type="radio" name="unit" id="english" value="english" /> English </label><br />
+<label>Height <input type="number" name="height" id="height" placeholder="Enter your height" ></input></label><br />
+<label>Weight <input type="number" name="weight" id="weight" placeholder="Enter your weight" /></label><br />
+<button id="calculate" onclick="calculate()">Calculate</button>
+<p id="validity"></p>
+<div id="output"></div>
+<script>
+ // Create a new JavaScript control class BMICalculator that has all the necessary functions 
+ 
+ // Write code to make sure all inputs are valid. If not valid, give appropriate response to indicate it is invalid and that it needs to be corrected.
+
+ // Use the BMICalculator class for calculations. Show BMI value and the status.
+ function calculate(){
+    var height = document.getElementById("height").value;
+    var weight = document.getElementById("weight").value;
+    var unit = getUnit() ;
+    validate(height,weight);
+    
+    if(unit === 1) 
+      calculateMetricBMI(height,weight);
+    else if(unit === 2)
+      calculateEnglishBMI(height,weight);
+ }
+ 
+ function calculateMetricBMI(h,w){
+   //input is kg and m
+   var unit = w / Math.pow(h,2);
+   document.getElementById("output").innerHTML = unit;
+
+ }
+
+ function calculateEnglishBMI(h,w){
+   // input is in lbs and in
+    var unit  = (w/Math.pow(h,2))*703;
+    document.getElementById("output").innerHTML = unit;
+ }
+
+ function getUnit(){
+    if(document.getElementById("metric").checked)
+    {
+      return 1;
+    }
+    else if(document.getElementById("english").checked)
+    {
+      return 2;
+    }
+    else{
+      alert("Please choose one of the unit types ");
+    }
+ }
+ 
+ function validate(x, y){
+   document.getElementById("validity").innerHTML ="";
+   if(isNaN(x) || isNaN(y) || x < 0 || y < 0 || x === "" || y === "" )
+   {
+    document.getElementById("validity").innerHTML = "Input not valid";;
+   }   
+ }
+
+</script>
+</body>
+</html>
