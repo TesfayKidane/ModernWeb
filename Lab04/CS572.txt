@@ -1,0 +1,1 @@
+This feels like a good time to warn you that what jQuery calls a promise is in fact totally different to what everyone else calls a promise. jQuery's promises have a poorly thought out API that will likely just confuse you. Fortunately, instead of using jQuery's strange version of a promise, you can just convert it to a really simple standardised promise:
