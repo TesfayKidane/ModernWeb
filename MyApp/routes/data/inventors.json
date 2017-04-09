@@ -1,3 +1,6 @@
 [
-    { first: 'Albert', last : 'Einstein'}
+    { "first": "Albert", "last" : "Einstein", "year":"1980"},
+       { "first": "Tesfay", "last" : "Aregay", "year":"2010"},
+          { "first": "Kudus", "last" : "Yared", "year":"0001"}   
+
 ]
