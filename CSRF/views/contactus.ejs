@@ -5,16 +5,19 @@
 </title>
 </head>
 <body>
+<input type="hidden" name="_csrf", value=<%=csrfTokenFromServer%>/>
 <form action="/contactus/submit" method="POST">
+    <p><%- JSON.stringify(errors) %></p>
     <label>Name</label>
     <input type="text" name="name" /><br/>
-    <label>Type</label><select name="cars">
+    <label>Type</label><select name="type">
         <option value="compliant">Compliant</option>
         <option value="suggestion">Suggestion</option>
     </select><br/>
     <label>message</label><br/><textarea name="message" rows="10" cols="30">
     put ur message here
     </textarea><br/>
+    <input type="hidden" name="_csrf", value=<%=csrfTokenFromServer%>/>
     <input type="submit" />
 </form>
 </body>
