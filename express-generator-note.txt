@@ -1,0 +1,8 @@
+$npm install -g express-generator --save
+$express -e -c less -f MyApp
+// -e ejs
+// -c set the stylesheet engine to less
+// -f force on non-empty directory
+// -h for help
+$ cd MyApp
+$ npm install
