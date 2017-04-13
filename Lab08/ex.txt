@@ -1,0 +1,7 @@
+1. db.zips.aggregate([{$match: {state: "IA"}}, {$project : {_id:0, "zipcode" : "$_id"}}])
+
+2. db.zips.aggregate([{$match: {"pop" : {$lt: 1000}}}, {$project : {_id:0, "zipcode" : "$_id"}}])
+
+3. db.zips.aggregate([{$group: {_id: {"state": "$state", "city": "$city"}, zipcodes: {$sum:1}}}, {$match: {zipcodes: {$gt: 1}}}])
+
+4. db.zips.aggregate([{$group: {_id: {"state": "$state", "city": "$city"}, population: {$sum:"$pop"}}}, {$sort: {"_id.state":1, "population": -1}}, {$group: {_id:"$_id.state", city: {$last: "$_id.city"}, population: {$last: "$population"} } }])

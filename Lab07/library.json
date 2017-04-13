@@ -1,0 +1,15 @@
+[
+    {
+        "_id" : 1,
+        "isbn" : 1241,
+        "keyword" : "algorithm",
+        "title" : "Algorithm",
+        "authors" :  [ {"name" : "Tesfay"}, 
+                       { "name" : "Sherali"}
+                     ],
+        "available" : false,
+        "returndate" : "04/10/2013",
+        "borrowed by" : { "name" : "Asaad", "id" : "32842", "email":"asaad@mum.edu"}
+    }
+
+]
