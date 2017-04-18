@@ -1,0 +1,16 @@
+{
+  "name": "emitter",
+  "version": "1.0.0",
+  "description": "emitter, clouser, inheritance",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "emitter",
+    "clouser",
+    "iife"
+  ],
+  "author": "Tesfay Aregay",
+  "license": "MIT"
+}
