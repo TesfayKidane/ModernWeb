@@ -1,0 +1,19 @@
+<label>Hero Names</label>
+<input placeholder="Insert Hero Name Here" class="form-control" [(ngModel)] ="heroName">
+<br>
+<button (click)="onAddHero()" class="btn btn-primary">Add Hero Name</button>
+<ul>
+<li *ngFor="let hero of heros">{{hero}}</li>
+<ul>
+
+<h1>3. Visibility Directive</h1><hr>
+<ul>
+    <li [myVisibility] = true>4. this should be hidden</li>
+    <li [myVisibility] = false>5. this should be hidden</li>
+    <li [myVisibility] = true>6. this should be hidden</li>
+    <li [myVisibility] = false>7. this should be hidden</li>
+</ul>
+
+<h1>4. Directive to change color on click</h1>
+<p> <span appMycolor (myColorName) = "colorName = $event">Click to change text color </span> </p>
+<p>  Color is : {{colorName}}</p>

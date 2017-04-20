@@ -7,7 +7,7 @@ import { Component,EventEmitter} from '@angular/core';
       <h1>Child</h1>
       <div class="counter">
       <button  (click) = "increase()">+</button>
-      <input #counterInput (keyup)="onChange(counterInput.value)" value={{counterValue}}>
+      <input #counterInput (input)="onChange(counterInput.value)" value={{counterValue}}>
       <button (click) = "decrease()">-</button>
       <p>Value from in parent component: {{parentValue}}</p>
       </div>
